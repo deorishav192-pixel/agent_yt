@@ -1,0 +1,13 @@
+channel_voice: "Actionable, concise, and practical"
+default_tags:
+  - automation
+  - youtube
+  - ai
+queue:
+  - title: "3 AI Tools to Save 5 Hours This Week"
+    body: |
+      Hook viewers in the first 5 seconds.
+      Explain each tool with one practical use case.
+      End with a CTA to subscribe for weekly automations.
+    tags: ["productivity", "workflows"]
+    privacy_status: "private"

@@ -1,0 +1,22 @@
+[project]
+name = "youtube-content-agent"
+version = "0.1.0"
+description = "Autonomous agent that generates videos and uploads to YouTube from instruction files"
+requires-python = ">=3.10"
+dependencies = [
+  "PyYAML>=6.0",
+  "google-api-python-client>=2.130",
+  "google-auth-oauthlib>=1.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
