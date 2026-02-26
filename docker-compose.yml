@@ -1,0 +1,10 @@
+services:
+  yt-agent:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./instructions.yaml:/app/instructions.yaml
+      - ./secrets:/app/secrets
+      - ./build:/app/build
+    command: ["python", "-m", "yt_agent.main", "--daemon"]
