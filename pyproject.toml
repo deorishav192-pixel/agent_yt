@@ -1,26 +1,22 @@
-name: CI
+[project]
+name = "youtube-content-agent"
+version = "0.1.0"
+description = "Autonomous agent that generates videos and uploads to YouTube from instruction files"
+requires-python = ">=3.10"
+dependencies = [
+  "PyYAML>=6.0",
+  "google-api-python-client>=2.130",
+  "google-auth-oauthlib>=1.2",
+]
 
-on: [push, pull_request]
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2",
+]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'          # or whatever version you need
-          cache: 'pip'                     # caches pip dependencies
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -e .                 # if your project is installable
-          # or if you have requirements.txt:
-          # pip install -r requirements.txt
-
-      - name: Run tests
-        run: |
-          pytest                           # or your test command
+[tool.pytest.ini_options]
+testpaths = ["tests"]
